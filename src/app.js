@@ -43,7 +43,7 @@ app.get('/help',(req, res )=>{
 })
  
 app.get('/weather',(req, res)=> {
-    console.log(req.query.address)
+   // console.log(req.query.address)
     if(!req.query.address){
         return res.send({
             error: 'no adress searched'
@@ -64,12 +64,18 @@ geocode(req.query.address,(error, {latitude, longitude, location}={})=>{
                 error
             })
         }
-        
-        return res.send({
-            location: location,
-            forecast: forecastData.weatherDescription,
-            temperature: forecastData.temperature,
-            address: req.query.address
+        console.log(forecastData)
+        console.log(location)
+        //console.log(req.query,address)
+        res.send({
+            forecast: forecastData,
+            location: location
+            
+            //forecast: forecastData.weatherDescription,
+            //temperature: forecastData.temperature,
+            //address: req.query.address
+            //humidity: forecastData.humidity*/
+           
         })
        
 })

@@ -24,7 +24,7 @@ wearherFrom.addEventListener('submit',(e)=>{
         console.log(data.forecast)
         console.log(data.temperature)
         messageOne.textContent=data.location
-        messageTwo.textContent=data.forecast + data.temperature
+        messageTwo.textContent=data.forecast 
         }
     }
     )
